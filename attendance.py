@@ -27,21 +27,21 @@ class Attendance:
 
 
         img = Image.open(
-            r"images\coaching.jpg")
+            "images/coaching.jpg")
         img = img.resize((450, 200))
         self.photoimage = ImageTk.PhotoImage(img)
         f_lbl = Label(self.root, image=self.photoimage)
         f_lbl.place(x=0, y=0, width=450, height=200)
 
         img2 = Image.open(
-            r"images\classroom.jpg")
+            "images/classroom.jpg")
         img2 = img2.resize((450, 200))
         self.photoimage2 = ImageTk.PhotoImage(img2)
         f_lbl = Label(self.root, image=self.photoimage2)
         f_lbl.place(x=450, y=0, width=450, height=200)
         
         img3 = Image.open(
-            r"images\class.jpeg")
+            "images/class.jpeg")
         img3 = img3.resize((450, 200))
         self.photoimage3 = ImageTk.PhotoImage(img3)
         f_lbl = Label(self.root, image=self.photoimage3)
@@ -49,7 +49,7 @@ class Attendance:
         
         # background
         img4 = Image.open(
-            r"images\Background.jpeg")
+            "images/Background.jpeg")
         img4 = img4.resize((1350, 500))
         self.photoimage4 = ImageTk.PhotoImage(img4)
         bg_img = Label(self.root, image=self.photoimage4)
@@ -68,7 +68,7 @@ class Attendance:
         left_frame.place(x=5, y=3, width=630, height=435)
 
         img_left = Image.open(
-            r"images\student.jpg")
+            "images/student.jpg")
         img_left = img_left.resize((300, 100))
         self.photoimage_left = ImageTk.PhotoImage(img_left)
 

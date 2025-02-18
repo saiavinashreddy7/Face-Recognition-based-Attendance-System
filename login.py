@@ -48,7 +48,7 @@ class Login:
         password = self.password.get()
 
         try:
-            con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+            con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456*", database="govinddb")
             my_cursor = con.cursor()
             my_cursor.execute("SELECT * FROM admin WHERE email = %s AND password = %s", (email, password))
             row = my_cursor.fetchone()

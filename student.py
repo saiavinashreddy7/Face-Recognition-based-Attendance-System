@@ -28,21 +28,21 @@ class Student:
         self.var_teacher = StringVar();
 
         img = Image.open(
-            r"C:\Users\shrij\OneDrive\Desktop\IDP\images\student1.jpeg")
+            "images/student1.jpeg")
         img = img.resize((500, 150))
         self.photoimage = ImageTk.PhotoImage(img)
         f_lbl = Label(self.root, image=self.photoimage)
         f_lbl.place(x=0, y=0, width=445, height=120)
 
         img2 = Image.open(
-            r"C:\Users\shrij\OneDrive\Desktop\IDP\images\student2.jpeg")
+            "images/student2.jpeg")
         img2 = img2.resize((500, 150))
         self.photoimage2 = ImageTk.PhotoImage(img2)
         f_lbl = Label(self.root, image=self.photoimage2)
         f_lbl.place(x=440, y=0, width=450, height=120)
 
         img3 = Image.open(
-            r"C:\Users\shrij\OneDrive\Desktop\IDP\images\student3.jpeg")
+            "images/student3.jpeg")
         img3 = img3.resize((500, 150))
         self.photoimage3 = ImageTk.PhotoImage(img3)
         f_lbl = Label(self.root, image=self.photoimage3)
@@ -50,7 +50,7 @@ class Student:
 
         #background
         img4 = Image.open(
-            r"images\back.jpg")
+            "images/back.jpg")
         img4 = img4.resize((1500, 800))
         self.photoimage4 = ImageTk.PhotoImage(img4)
         bg_img = Label(self.root, image=self.photoimage4)
@@ -69,7 +69,7 @@ class Student:
         left_frame.place(x=5, y=3, width=640, height=487)
 
         img_left = Image.open(
-            r"images\student.jpg")
+            "images/student.jpg")
         img_left = img_left.resize((300, 100))
         self.photoimage_left = ImageTk.PhotoImage(img_left)
 
@@ -252,7 +252,7 @@ class Student:
         right_frame.place(x=650, y=3, width=600, height=487)
 
         img_right = Image.open(
-            r"C:\Users\shrij\OneDrive\Desktop\IDP\images\student1.jpeg")
+            "images/student1.jpeg")
         img_right = img_right.resize((300, 100))
         self.photoimage_right = ImageTk.PhotoImage(img_right)
 
@@ -341,7 +341,7 @@ class Student:
             messagebox.showerror("Error","All fields are required", parent=self.root)
         else:
             try:
-                con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+                con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456*", database="govinddb")
                 my_cursor = con.cursor()
                 my_cursor.execute("insert into students values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                                 (
@@ -368,7 +368,7 @@ class Student:
 
     #fetch data from database
     def fetch_data(self):
-        con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+        con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456*", database="govinddb")
         my_cursor = con.cursor()
         my_cursor.execute("SELECT * FROM students")
         data = my_cursor.fetchall()
@@ -408,7 +408,7 @@ class Student:
             try:
                 Update = messagebox.askyesno("Update", "Do you want to update this student details", parent = self.root)
                 if Update > 0:
-                    con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+                    con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456", database="govinddb")
                     my_cursor = con.cursor()
                     original_student_id = self.var_std_id.get()
                     my_cursor.execute("update students set Department=%s, Course=%s, Year=%s, Semester=%s, Student_ID=%s, Name=%s, Section=%s, `RollNo.`=%s, Gender=%s, Address=%s, Phone=%s, DOB=%s, Photo=%s where Student_ID=%s",
@@ -446,7 +446,7 @@ class Student:
             try:
                 delete = messagebox.askyesno("Student delete page", "Do you want to delete this student?", parent=self.root)
                 if delete > 0:
-                    con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+                    con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456*", database="govinddb")
                     my_cursor = con.cursor()
                     s = "delete from students where Student_ID=%s"
                     val = (self.var_std_id. get(), )
@@ -484,7 +484,7 @@ class Student:
         else:
             try:
                 # Connect to the database
-                con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+                con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456*", database="govinddb")
                 my_cursor = con.cursor()
 
                 # Fetch existing data from the students table
@@ -552,7 +552,7 @@ class Student:
         else:
             try:
                 # Connect to the database
-                con = mysql.connector.connect(host="localhost", username="root", password="Shrijal@123", database="shrijaldb")
+                con = mysql.connector.connect(host="localhost", username="root", password="*Mo123456*", database="govinddb")
                 my_cursor = con.cursor()
 
                 # Check if the student exists in the database
